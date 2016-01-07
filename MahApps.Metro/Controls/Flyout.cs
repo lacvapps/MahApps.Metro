@@ -355,7 +355,7 @@ namespace MahApps.Metro.Controls
                             }
                             flyout.Visibility = Visibility.Visible;
                             flyout.ApplyAnimation(flyout.Position, flyout.AnimateOpacity);
-                            flyout.TryFocusElement();
+                            //flyout.TryFocusElement();
                         }
                         else
                         {
@@ -377,7 +377,7 @@ namespace MahApps.Metro.Controls
                         if ((bool)e.NewValue)
                         {
                             flyout.Visibility = Visibility.Visible;
-                            flyout.TryFocusElement();
+                            //flyout.TryFocusElement();
                         }
                         else
                         {
