@@ -1,6 +1,7 @@
 ﻿<Dialogs:BaseMetroDialog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:Dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs"
+                         xmlns:sys="clr-namespace:System;assembly=mscorlib"
                          x:Class="MahApps.Metro.Controls.Dialogs.MessageDialog">
     <Dialogs:BaseMetroDialog.CommandBindings>
         <CommandBinding Command="Copy"
@@ -15,6 +16,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <sys:Int32 x:Key="TutorialButtonTag">-2</sys:Int32>
+        </Grid.Resources>
         <ScrollViewer x:Name="PART_MessageScrollViewer"
                       Grid.Column="0"
                       Grid.ColumnSpan="2"
@@ -32,6 +36,7 @@
                     Grid.Column="0"
                     Grid.Row="1"
                     Style="{DynamicResource AccentedDialogSquareButton}"
+                    Tag="{StaticResource TutorialButtonTag}"
                     Content="{Binding AffirmativeButtonText, RelativeSource={RelativeSource AncestorType=Dialogs:MessageDialog, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}"
                     Margin="5" />
         <Button x:Name="PART_FirstAuxiliaryButton"
@@ -43,6 +48,7 @@
         <Button x:Name="PART_NegativeButton"
                     Grid.Column="1"
                     Grid.Row="1"
+                    Tag="{StaticResource TutorialButtonTag}"
                     Content="{Binding NegativeButtonText, RelativeSource={RelativeSource AncestorType=Dialogs:MessageDialog, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}"
                     Margin="5" />
         <Button x:Name="PART_SecondAuxiliaryButton"
